@@ -63,12 +63,7 @@
     const cid = await store.storeDirectory(fileEl.files)
     
     log({ files: Array.from(fileEl.files).map((f) => f.name), cid })
-    {
-
-      files : Array.from(fileEl.files).map((f) => f.name), cid
-      console.log(files.name);
-
-    }
+    
     const status = await store.status(cid)
     
     log(status)
