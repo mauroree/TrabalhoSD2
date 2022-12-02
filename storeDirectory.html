@@ -48,7 +48,8 @@
     new URLSearchParams(window.location.search).get('key') || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGYzMjFBMDg4MjUwOTY2Mjk1QTE0YTI3NjUyNjVhNENlZEFmNmZFN2EiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY2OTk3OTkyNzQzMCwibmFtZSI6IlByb2pldG9TRDIifQ.dDdQc58sDcGptqb72tQHld5-ZgNHIYYQOk-6wkE4Hh0' // your API key from https://nft.storage/manage
   function log(msg) {
     msg = JSON.stringify(msg, null, 2)
-    document.getElementById('out').innerHTML += `${msg}\n`
+
+    document.getElementById('out').innerHTML += `${cid}\n`
   }
 
   document.querySelector('form').addEventListener('submit', async (e) => {
