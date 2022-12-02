@@ -1,0 +1,82 @@
+body {
+
+    background-color: #ddbf15b7;
+}
+
+
+section {
+
+    width: 700px;
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 12px 0px rgba(8, 8, 8, 0.329);
+
+}
+
+label {
+
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+
+
+}
+
+input {
+
+
+    margin: auto;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+button {
+
+    margin: auto;
+    padding: 5px;
+
+
+}
+
+h1 {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+
+h2 {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+
+}
+
+nav {
+
+    padding: 15px;
+}
+
+a {
+
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px;
+    font: bold 18px arial;
+    color: black;
+}
+
+a:hover {
+
+
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 3px;
+
+}

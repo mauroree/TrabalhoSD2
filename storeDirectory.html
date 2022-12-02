@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SD2</title>
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<main>
+
+  <body>
+
+    <section>
+      <nav>
+
+        <a href="https://nft.storage/files/" target="_blank">Todos Arquivos</a>
+
+      </nav>
+      <h1></h1>
+      <h2>Selecione os arquivos que deseja publicar</h1>
+
+        <form id="form">
+          <label> <input type="file" multiple /> </label>
+          <div id="button">
+            <button type="submit">Upload</button>
+          </div>
+        </form>
+        <pre id="out"></pre>
+
+
+    </section>
+
+</main>
+
+</body>
+
+</html>
+
+<script type="module">
+  import { NFTStorage } from 'https://cdn.jsdelivr.net/npm/nft.storage/dist/bundle.esm.min.js'
+
+  const token =
+    new URLSearchParams(window.location.search).get('key') || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGYzMjFBMDg4MjUwOTY2Mjk1QTE0YTI3NjUyNjVhNENlZEFmNmZFN2EiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY2OTk3OTkyNzQzMCwibmFtZSI6IlByb2pldG9TRDIifQ.dDdQc58sDcGptqb72tQHld5-ZgNHIYYQOk-6wkE4Hh0' // your API key from https://nft.storage/manage
+  function log(msg) {
+    msg = JSON.stringify(msg, null, 2)
+    document.getElementById('out').innerHTML += `${msg}\n`
+  }
+
+  document.querySelector('form').addEventListener('submit', async (e) => {
+    e.preventDefault()
+    
+    const fileEl = document.querySelector('input[type="file"]')
+    
+    if (!fileEl.files.length) return log('Por favor selecione um arquivo.')
+    log(`Fazendo upload de ${fileEl.files.length} arquivo`)
+    
+    const store = new NFTStorage({ token })
+    const cid = await store.storeDirectory(fileEl.files)
+    
+    log({ files: Array.from(fileEl.files).map((f) => f.name), cid })
+    
+    const status = await store.status(cid)
+    
+    log(status)
+  })
+</script>
