@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SD2</title>
+  <title>NFT Storage</title>
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 
@@ -15,29 +15,42 @@
 
   <body>
 
+    <header>
+
+      <h1>GERENCIADOR DE DOCUMENTOS</h1>
+
+    </header>
+
     <section>
+
       <nav>
 
-        <a href="https://nft.storage/files/" target="_blank">Todos Arquivos</a>
+        <a href="https://nft.storage/files/" target="_blank">Files</a>
+        <a href="https://github.com/nftstorage/nft.storage" target="_blank">Github</a>
 
       </nav>
-      <h1>  </h1>
-      <h2>Selecione os arquivos que deseja publicar</h1>
+
+      <h2>Selecione os documentos abaixo</h1>
 
         <form id="form">
           <label> <input type="file" multiple /> </label>
           <div id="button">
-            <button type="submit">Upload</button>
+            <button type="submit">Enviar</button>
           </div>
         </form>
         <pre id="out"></pre>
-      
 
     </section>
 
 </main>
 
 </body>
+
+<footer>
+
+  <h2>Trabalho Final Sistemas Distribuídos II - &copy; Mauro</h2>
+
+</footer>
 
 </html>
 
@@ -49,26 +62,25 @@
   function log(msg) {
     msg = JSON.stringify(msg, null, 2)
 
-    document.getElementById('out').innerHTML += `${cid}\n`
+    document.getElementById('out').innerHTML += `${msg}\n`
   }
 
   document.querySelector('form').addEventListener('submit', async (e) => {
+
     e.preventDefault()
-    
+
     const fileEl = document.querySelector('input[type="file"]')
-    
+
     if (!fileEl.files.length) return log('Por favor selecione um arquivo.')
-    log(`Fazendo upload de ${fileEl.files.length} arquivo, aguarde...`)
-    
+
+    log(`Publicando ${fileEl.files.length} arquivos, aguarde...`)
     const store = new NFTStorage({ token })
     const cid = await store.storeDirectory(fileEl.files)
-    
-    log({ files: Array.from(fileEl.files).map((f) => f.name), cid })
-    
-    const status = await store.status(cid)
-    
-    log(status)
 
-   
+    log({ files: Array.from(fileEl.files).map((f) => f.name) })
+
+    log("Upload feito com sucesso!")
+
   })
+
 </script>

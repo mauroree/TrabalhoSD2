@@ -1,21 +1,31 @@
-body {
 
-    padding: 20px;
-    background-color: #ddbf15b7;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+body {
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(212, 182, 8, 0.877);
 }
 
+header {
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(255, 217, 0);
+    width: 710px;
+    border-radius: 5px;
+    box-shadow: inset 3px 3px 12px 0px rgba(8, 8, 8, 0.329);
+}
 
 section {
-
     width: 700px;
     height: 500px;
     margin: auto;
     padding: 10px;
     text-align: center;
-    background-color: white;
+    background-color: rgba(250, 243, 243, 0.863);
     border-radius: 10px;
     box-shadow: inset 3px 3px 12px 0px rgba(8, 8, 8, 0.329);
-
 }
 
 label {
@@ -23,40 +33,35 @@ label {
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-
-
 }
 
 input {
 
-
     margin: auto;
     padding: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 30px;
+    font-family: 'Roboto Mono', monospace;
     font-weight: bold;
     text-align: center;
-
 }
 
 button {
 
     margin: auto;
-    padding: 5px;
-
-
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgb(255, 217, 0);
+    font-family: 'Roboto Mono', monospace;
 }
 
 h1 {
-
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto Mono', monospace; 
     font-size: 18px;
 }
 
 h2 {
-
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: 18px;
-
 }
 
 nav {
@@ -65,19 +70,26 @@ nav {
 }
 
 a {
-
-    text-decoration: none;
-    border-radius: 10px;
+    text-decoration: underline;
     padding: 5px;
-    font: bold 18px arial;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 18px;
     color: black;
 }
 
-a:hover {
+a:hover { 
+    background-color: rgb(255, 217, 0);
+    border-radius: 5px;
+    padding: 5px;
+}
 
-
-    background-color: yellow;
-    border-radius: 10px;
-    padding: 3px;
-
+footer {
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(255, 217, 0);
+    width: 710px;
+    border-radius: 5px;
+    box-shadow: inset 3px 3px 12px 0px rgba(8, 8, 8, 0.329);
 }
